@@ -16,3 +16,5 @@ Hence why in this project,
 It's not the most useful application in the world, but I'm a fan of ranking the things I like,
  and through developing this, I hope to work on my testing (TDD using JUnit) skills, 
  and to combine my Java skills with my basic knowledge of the Spotify Web API.
+
+This project uses the [spotify-web-api-java library](https://github.com/spotify-web-api-java/spotify-web-api-java).
