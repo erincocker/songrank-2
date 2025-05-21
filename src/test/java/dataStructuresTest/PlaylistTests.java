@@ -16,6 +16,6 @@ public class PlaylistTests {
 
     @Test
     public void getFirstSongDetailsTest() {
-        assertEquals("Socks", playlist.items().get(0).name());
+        assertEquals("Socks", playlist.getItems().get(0).getName());
     }
 }
