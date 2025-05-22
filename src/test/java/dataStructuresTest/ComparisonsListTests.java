@@ -31,9 +31,10 @@ public class ComparisonsListTests {
     public void blankComparisonListIsCreated() {
         ComparisonsList comparisonsList = new ComparisonsList(playlist);
         List<List<Integer>> expectedList = new ArrayList<>();
-        for (int i = 0; i < 6; i++) {
-            expectedList.add(Arrays.asList(0,0,0,0,0,0));
+        for (int i = 0; i < 7; i++) {
+            expectedList.add(Arrays.asList(0,0,0,0,0,0,0));
         }
+        assertEquals(7, comparisonsList.getComparisons().size());
         assertEquals(expectedList, comparisonsList.getComparisons());
     }
 }

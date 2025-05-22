@@ -3,6 +3,7 @@ package dataStructures;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 // this will be practically the same as the initial list from the original songrank.
@@ -14,9 +15,13 @@ public class ComparisonsList {
 
     public ComparisonsList(JsonNode playlist) {
         this.comparisons = new ArrayList<>();
+        int total = playlist.get("total").asInt();
+        for (int i = 0; i < total; i++) {
+            this.comparisons.add(new ArrayList<>(Collections.nCopies(total, 0)));
+        }
     }
 
     public List<List<Integer>> getComparisons() {
-        return null;
+        return comparisons;
     }
 }
