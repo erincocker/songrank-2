@@ -1,84 +1,70 @@
 {
   "items": [
     {
-      "track": {
-        "artists": [
-          "Chrissy"
-        ],
-        "id": 0,
-        "image": "https://i.scdn.co/image/ab67616d00001e026d6cc2f5ef88a7a052b65592",
-        "name": "Socks",
-        "spotify_id": "7sGlmEjFjA4EPOnKkzmqNF"
-      }
+      "artists": [
+        "Chrissy"
+      ],
+      "id": 0,
+      "image": "https://i.scdn.co/image/ab67616d00001e026d6cc2f5ef88a7a052b65592",
+      "name": "Socks",
+      "spotify_id": "7sGlmEjFjA4EPOnKkzmqNF"
     },
     {
-      "track": {
-        "artists": [
-          {
-            "name": "The Police"
-          }
-        ],
-        "id": 1,
-        "image": "https://i.scdn.co/image/ab67616d00001e02c8e97cafeb2acb85b21a777e",
-        "name": "Every Breath You Take",
-        "spotify_id": "1JSTJqkT5qHq8MDJnJbRE1"
-      }
+      "artists": [
+        {
+          "name": "The Police"
+        }
+      ],
+      "id": 1,
+      "image": "https://i.scdn.co/image/ab67616d00001e02c8e97cafeb2acb85b21a777e",
+      "name": "Every Breath You Take",
+      "spotify_id": "1JSTJqkT5qHq8MDJnJbRE1"
     },
     {
-      "track": {
-        "artists": [
-          "Gorillaz"
-        ],
-        "id": 2,
-        "image": "https://i.scdn.co/image/ab67616d00001e02661d019f34569f79eae9e985",
-        "name": "Rhinestone Eyes",
-        "spotify_id": "1foMv2HQwfQ2vntFf9HFeG"
-      }
+      "artists": [
+        "Gorillaz"
+      ],
+      "id": 2,
+      "image": "https://i.scdn.co/image/ab67616d00001e02661d019f34569f79eae9e985",
+      "name": "Rhinestone Eyes",
+      "spotify_id": "1foMv2HQwfQ2vntFf9HFeG"
     },
     {
-      "track": {
-        "artists": [
-          "Lorien Testard",
-          "Alice Duport-Percier"
-        ],
-        "id": 3,
-        "image": "https://i.scdn.co/image/ab67616d00001e02b564673cb131036b12872979",
-        "name": "Lumière",
-        "spotify_id": "1A1XuDIYZxSKrQ6mzkWwAT"
-      }
+      "artists": [
+        "Lorien Testard",
+        "Alice Duport-Percier"
+      ],
+      "id": 3,
+      "image": "https://i.scdn.co/image/ab67616d00001e02b564673cb131036b12872979",
+      "name": "Lumière",
+      "spotify_id": "1A1XuDIYZxSKrQ6mzkWwAT"
     },
     {
-      "track": {
-        "artists": [
-          "Genesis"
-        ],
-        "id": 4,
-        "image": "https://i.scdn.co/image/ab67616d00001e02b917174eb6069392e8a3cc7f",
-        "name": "Invisible Touch - 2007 Remaster",
-        "spotify_id": "0xpBr84T3FTm9j4D1MdPtk"
-      }
+      "artists": [
+        "Genesis"
+      ],
+      "id": 4,
+      "image": "https://i.scdn.co/image/ab67616d00001e02b917174eb6069392e8a3cc7f",
+      "name": "Invisible Touch - 2007 Remaster",
+      "spotify_id": "0xpBr84T3FTm9j4D1MdPtk"
     },
     {
-      "track": {
-        "artists": [
-          "Rachel Chinouriri"
-        ],
-        "id": 5,
-        "image": "https://i.scdn.co/image/ab67616d00001e02c9dba4b1e70179d9a50f3666",
-        "name": "23:42",
-        "spotify_id": "0I1WEMYSU0dfENElriMamz"
-      }
+      "artists": [
+        "Rachel Chinouriri"
+      ],
+      "id": 5,
+      "image": "https://i.scdn.co/image/ab67616d00001e02c9dba4b1e70179d9a50f3666",
+      "name": "23:42",
+      "spotify_id": "0I1WEMYSU0dfENElriMamz"
     },
     {
-      "track": {
-        "artists": [
-          "Florence + The Machine"
-        ],
-        "id": 6,
-        "image": "https://i.scdn.co/image/ab67616d00001e026a8c1075f751a78e0b7799c7",
-        "name": "Shake It Out",
-        "spotify_id": "71iSmEeF0qRVyULABxP75P"
-      }
+      "artists": [
+        "Florence + The Machine"
+      ],
+      "id": 6,
+      "image": "https://i.scdn.co/image/ab67616d00001e026a8c1075f751a78e0b7799c7",
+      "name": "Shake It Out",
+      "spotify_id": "71iSmEeF0qRVyULABxP75P"
     }
   ],
   "name": "test playlist"
