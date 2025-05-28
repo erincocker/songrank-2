@@ -8,9 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -31,21 +29,20 @@ public class SongListsTests {
     @Test
     public void blankComparisonListIsCreated() {
         SongLists songLists = new SongLists(playlist);
-        List<List<Integer>> expectedComparisonsList = new ArrayList<>();
-        for (int i = 0; i < 6; i++) {
-            expectedComparisonsList.add(Arrays.asList(0,0,0,0,0,0,0));
-        }
+        songLists.getComparisonsList().forEach((k,v) -> assertEquals(Arrays.asList(0,0,0,0,0,0,0), v));
         assertEquals(6, songLists.getComparisonsList().size());
-        assertEquals(expectedComparisonsList, songLists.getComparisonsList());
     }
 
     @Test
     public void logAComparison() {
         SongLists songLists = new SongLists(playlist);
-        songLists.addComparison(0,true, 1);
-        assertEquals(-1, songLists.getComparisonsList().get(0).get(1));
-        songLists.addComparison(0,false, 1);
-        assertEquals(+1, songLists.getComparisonsList().get(0).get(1));
+        int rankedListSong = songLists.getRankedList().get(0);
+        int comparisonsListSong = rankedListSong == 0 ? 1 : 0;
+
+        songLists.addComparison(comparisonsListSong,true, rankedListSong);
+        assertEquals(-1, songLists.getComparisonsList().get(comparisonsListSong).get(rankedListSong));
+        songLists.addComparison(comparisonsListSong,false, rankedListSong);
+        assertEquals(+1, songLists.getComparisonsList().get(comparisonsListSong).get(rankedListSong));
     }
 
     //ranked list should contain one number only: 0,1,2,3,4,5, or 6

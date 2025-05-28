@@ -2,10 +2,7 @@ package dataStructures;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 // the comparisons list will be practically the same as the initial list from the original songrank.
 // nxn array, list[i][j] == 0 if songs i,j have not been ranked
@@ -14,14 +11,14 @@ import java.util.Random;
 
 //the ranked list is a list of ranked song ids, same as the master list from the original songrank
 public class SongLists {
-    private List<List<Integer>> comparisonsList;
+    private Map<Integer, List<Integer>> comparisonsList;
     private List<Integer> rankedList;
 
     public SongLists(JsonNode playlist) {
-        this.comparisonsList = new ArrayList<>();
+        this.comparisonsList = new HashMap<>();
         int total = playlist.get("total").asInt();
         for (int i = 0; i < total; i++) {
-            this.comparisonsList.add(new ArrayList<>(Collections.nCopies(total, 0)));
+            this.comparisonsList.put(i, new ArrayList<>(Collections.nCopies(total, 0)));
         }
         //add a random song to the ranked list to begin with
         rankedList = new ArrayList<>();
@@ -38,7 +35,7 @@ public class SongLists {
         return rankedList;
     }
 
-    public List<List<Integer>> getComparisonsList() {
+    public Map<Integer, List<Integer>> getComparisonsList() {
         return comparisonsList;
     }
 
