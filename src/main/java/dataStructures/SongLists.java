@@ -10,23 +10,23 @@ import java.util.List;
 // nxn array, list[i][j] == 0 if songs i,j have not been ranked
 // list[i][j] == -1 if song i is better than song j (i.e rank of i < rank of j)
 // list[i][j] == 1 if song i is worse than song j (i.e rank of i > rank of j)
-public class ComparisonsList {
-    private List<List<Integer>> comparisons;
+public class SongLists {
+    private List<List<Integer>> comparisonsList;
 
-    public ComparisonsList(JsonNode playlist) {
-        this.comparisons = new ArrayList<>();
+    public SongLists(JsonNode playlist) {
+        this.comparisonsList = new ArrayList<>();
         int total = playlist.get("total").asInt();
         for (int i = 0; i < total; i++) {
-            this.comparisons.add(new ArrayList<>(Collections.nCopies(total, 0)));
+            this.comparisonsList.add(new ArrayList<>(Collections.nCopies(total, 0)));
         }
     }
 
-    public List<List<Integer>> getComparisons() {
-        return comparisons;
+    public List<List<Integer>> getComparisonsList() {
+        return comparisonsList;
     }
 
     public void addComparison(int comparisonsListSong, boolean betterThan, int rankedListSong) {
-        this.comparisons.get(comparisonsListSong).set(rankedListSong, betterThan ? -1 : +1);
+        this.comparisonsList.get(comparisonsListSong).set(rankedListSong, betterThan ? -1 : +1);
     }
 
 }
