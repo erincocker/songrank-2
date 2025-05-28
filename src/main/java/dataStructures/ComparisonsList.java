@@ -24,4 +24,9 @@ public class ComparisonsList {
     public List<List<Integer>> getComparisons() {
         return comparisons;
     }
+
+    public void addComparison(int comparisonsListSong, boolean betterThan, int rankedListSong) {
+        this.comparisons.get(comparisonsListSong).set(rankedListSong, betterThan ? -1 : +1);
+    }
+
 }

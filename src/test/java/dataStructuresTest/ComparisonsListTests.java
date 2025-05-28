@@ -37,4 +37,13 @@ public class ComparisonsListTests {
         assertEquals(7, comparisonsList.getComparisons().size());
         assertEquals(expectedList, comparisonsList.getComparisons());
     }
+
+    @Test
+    public void logAComparison() {
+        ComparisonsList comparisonsList = new ComparisonsList(playlist);
+        comparisonsList.addComparison(0,true, 1);
+        assertEquals(-1, comparisonsList.getComparisons().get(0).get(1));
+        comparisonsList.addComparison(0,false, 1);
+        assertEquals(+1, comparisonsList.getComparisons().get(0).get(1));
+    }
 }
