@@ -33,6 +33,12 @@ public class SongLists {
 
     public void tryAddSongToRankedList(int song) {
         Bounds bounds = findBounds(song);
+
+        if (bounds.lowerBound() > bounds.upperBound()) {
+            System.out.println("Contradiction, song's lower bound is greater than song's upper bound");
+            System.exit(1);
+        }
+
         if (bounds.lowerBound() == bounds.upperBound()) {
             rankedList.add(bounds.lowerBound(), song);
             comparisonsList.remove(song);

@@ -83,5 +83,14 @@ public class SongListsTests {
         assert(songLists.getRankedList().get(1) == comparisonsListSong);
     }
 
+    @Test
+    public void songCorrectlyRemovedFromComparisonsList() {
+        SongLists songLists = new SongLists(playlist);
+        int rankedListSong = songLists.getRankedList().get(0);
+        int comparisonsListSong = rankedListSong == 0 ? 1 : 0;
+        songLists.addComparison(comparisonsListSong, true, rankedListSong);
+        songLists.tryAddSongToRankedList(comparisonsListSong);
+        assertNull(songLists.getComparisonsList().get(comparisonsListSong));
+    }
 
 }
