@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dataStructures.SongLists;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -14,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class SongListsTests {
     private static JsonNode playlist;
+    private SongLists songLists;
 
     @BeforeAll
     public static void beforeAll() {
@@ -26,16 +28,19 @@ public class SongListsTests {
         }
     }
 
+    @BeforeEach
+    public void beforeEach() {
+        songLists = new SongLists(playlist);
+    }
+
     @Test
     public void blankComparisonListIsCreated() {
-        SongLists songLists = new SongLists(playlist);
         songLists.getComparisonsList().forEach((k,v) -> assertEquals(Arrays.asList(0,0,0,0,0,0,0), v));
         assertEquals(6, songLists.getComparisonsList().size());
     }
 
     @Test
     public void logAComparison() {
-        SongLists songLists = new SongLists(playlist);
         int rankedListSong = songLists.getRankedList().get(0);
         int comparisonsListSong = rankedListSong == 0 ? 1 : 0;
 
@@ -48,14 +53,12 @@ public class SongListsTests {
     //ranked list should contain one number only: 0,1,2,3,4,5, or 6
     @Test
     public void initialRankedListIsCreated() {
-        SongLists songLists = new SongLists(playlist);
         assert(songLists.getRankedList().size() == 1);
         assert(songLists.getRankedList().get(0) < 7 && songLists.getRankedList().get(0) >= 0);
     }
 
     @Test
     public void songCorrectlyAddedToRankedList() {
-        SongLists songLists = new SongLists(playlist);
         int rankedListSong = songLists.getRankedList().get(0);
         int comparisonsListSong = rankedListSong == 0 ? 1 : 0;
         songLists.addComparison(comparisonsListSong, true, rankedListSong);
@@ -65,7 +68,6 @@ public class SongListsTests {
 
     @Test
     public void songCorrectlyNotAddedToRankedList() {
-        SongLists songLists = new SongLists(playlist);
         int rankedListSong = songLists.getRankedList().get(0);
         int comparisonsListSong = rankedListSong == 0 ? 1 : 0;
         songLists.tryAddSongToRankedList(comparisonsListSong);
@@ -75,7 +77,6 @@ public class SongListsTests {
 
     @Test
     public void songCorrectlyAddedToEndOfRankedList() {
-        SongLists songLists = new SongLists(playlist);
         int rankedListSong = songLists.getRankedList().get(0);
         int comparisonsListSong = rankedListSong == 0 ? 1 : 0;
         songLists.addComparison(comparisonsListSong, false, rankedListSong);
@@ -85,7 +86,6 @@ public class SongListsTests {
 
     @Test
     public void songCorrectlyRemovedFromComparisonsList() {
-        SongLists songLists = new SongLists(playlist);
         int rankedListSong = songLists.getRankedList().get(0);
         int comparisonsListSong = rankedListSong == 0 ? 1 : 0;
         songLists.addComparison(comparisonsListSong, true, rankedListSong);
