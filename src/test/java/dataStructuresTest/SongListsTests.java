@@ -3,6 +3,7 @@ package dataStructuresTest;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dataStructures.SongLists;
+import dataStructures.SongPair;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -54,7 +55,7 @@ public class SongListsTests {
     @Test
     public void initialRankedListIsCreated() {
         assert(songLists.getRankedList().size() == 1);
-        assert(songLists.getRankedList().get(0) < 7 && songLists.getRankedList().get(0) >= 0);
+        assert(Arrays.asList(0,1,2,3,4,5,6).contains(songLists.getRankedList().get(0)));
     }
 
     @Test
@@ -91,6 +92,14 @@ public class SongListsTests {
         songLists.addComparison(comparisonsListSong, true, rankedListSong);
         songLists.tryAddSongToRankedList(comparisonsListSong);
         assertNull(songLists.getComparisonsList().get(comparisonsListSong));
+    }
+
+    @Test
+    public void choosePairReturnsValidSongs() {
+        int rankedListSong = songLists.getRankedList().get(0);
+        SongPair songPair = songLists.getPairToCompare();
+        assert(songPair.rankedListSong() == rankedListSong);
+        assert(songLists.getComparisonsList().containsKey(songPair.comparisonsListSong()));
     }
 
 }

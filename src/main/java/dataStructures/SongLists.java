@@ -61,6 +61,10 @@ public class SongLists {
         return new Bounds(lowerBound, upperBound);
     }
 
+    public SongPair getPairToCompare() {
+        return null;
+    }
+
     public List<Integer> getRankedList() {
         return rankedList;
     }
