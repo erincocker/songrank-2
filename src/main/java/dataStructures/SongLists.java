@@ -31,6 +31,30 @@ public class SongLists {
         this.comparisonsList.get(comparisonsListSong).set(rankedListSong, betterThan ? -1 : +1);
     }
 
+    public void tryAddSongToRankedList(int song) {
+        Bounds bounds = findBounds(song);
+        if (bounds.lowerBound() == bounds.upperBound()) {
+            rankedList.add(bounds.lowerBound(), song);
+            comparisonsList.remove(song);
+        }
+    }
+
+    // bounds are inclusive,
+    // they indicate the min + max possible position of the song in the ranked list
+    private Bounds findBounds(int song) {
+        int lowerBound = 0;
+        int upperBound = rankedList.size();
+        for (int i = 0; i < rankedList.size(); i++) {
+            int comparison = comparisonsList.get(song).get(rankedList.get(i));
+            if (comparison == -1) {
+                upperBound = Math.min(upperBound, i);
+            } else if (comparison == +1) {
+                lowerBound = i + 1;
+            }
+        }
+        return new Bounds(lowerBound, upperBound);
+    }
+
     public List<Integer> getRankedList() {
         return rankedList;
     }
@@ -40,3 +64,5 @@ public class SongLists {
     }
 
 }
+
+record Bounds(int lowerBound, int upperBound) {}

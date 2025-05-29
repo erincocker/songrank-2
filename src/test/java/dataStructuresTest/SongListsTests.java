@@ -53,4 +53,14 @@ public class SongListsTests {
         assert(songLists.getRankedList().get(0) < 7 && songLists.getRankedList().get(0) >= 0);
     }
 
+    @Test
+    public void songCorrectlyAddedToRankedList() {
+        SongLists songLists = new SongLists(playlist);
+        int rankedListSong = songLists.getRankedList().get(0);
+        int comparisonsListSong = rankedListSong == 0 ? 1 : 0;
+        songLists.addComparison(comparisonsListSong, true, rankedListSong);
+        songLists.tryAddSongToRankedList(comparisonsListSong);
+        assert(songLists.getRankedList().get(0) == comparisonsListSong);
+    }
+
 }
