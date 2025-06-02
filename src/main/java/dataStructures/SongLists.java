@@ -62,7 +62,14 @@ public class SongLists {
     }
 
     public SongPair getPairToCompare() {
-        return null;
+        Random random = new Random();
+        int comparisonsListSong = comparisonsList.keySet().stream()
+                .skip(random.nextInt(comparisonsList.size()))
+                .findFirst().get();
+
+        int rankedListSong = rankedList.get(random.nextInt(rankedList.size()));
+
+        return new SongPair(comparisonsListSong, rankedListSong);
     }
 
     public List<Integer> getRankedList() {
